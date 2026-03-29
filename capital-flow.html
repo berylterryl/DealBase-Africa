@@ -1538,28 +1538,7 @@ function renderCountryTable() {
 
 function buildCountryTable() {
   renderCountryTable();
-}
 
-/* ═══════════════════════════════════════════════════════
-   TOP DEALS TABLE
-═══════════════════════════════════════════════════════ */
-function buildTopDeals() {
-  var withVal = ALL_DEALS.filter(function(d){ return d.valueNum; });
-  withVal.sort(function(a, b){ return b.valueNum - a.valueNum; });
-  var top10 = withVal.slice(0, 10);
-
-  document.getElementById('topDealsBody').innerHTML = top10.map(function(d, i) {
-    return '<tr>' +
-      '<td><span class="rank-num">' + (i + 1) + '</span></td>' +
-      '<td style="font-weight:600;">' + escHtml(d.target) + '</td>' +
-      '<td class="muted">' + escHtml(d.acquirer.split('\n')[0]) + '</td>' +
-      '<td><span class="country-badge">' + escHtml(d.country) + '</span></td>' +
-      '<td><span class="sector-pill">' + escHtml(d.sector) + '</span></td>' +
-      '<td class="r gold">' + fmtValLong(d.valueNum) + '</td>' +
-      '<td class="c">' + (d.stake !== '—' ? '<span class="stake-pill">' + escHtml(d.stake) + '</span>' : '<span class="muted">—</span>') + '</td>' +
-    '</tr>';
-  }).join('');
-}
 
 /* ═══════════════════════════════════════════════════════
    UTILS
