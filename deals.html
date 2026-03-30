@@ -13,6 +13,156 @@
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading-state p{font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.08em;}
 
+/* ── TABLE REDESIGN — multiples.vc clean style ── */
+.tbl-wrap{
+  overflow-x:auto;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  box-shadow:0 1px 4px rgba(0,0,0,.06),0 4px 24px rgba(0,0,0,.08);
+  background:#fff;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13.5px;
+  background:#fff;
+  font-family:'DM Sans',sans-serif;
+}
+thead tr{
+  border-bottom:1px solid #e5e7eb;
+}
+thead th{
+  padding:11px 16px;
+  text-align:left;
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:#9ca3af;
+  background:#fff;
+  white-space:nowrap;
+  border-bottom:1px solid #e5e7eb;
+  user-select:none;
+}
+thead th .sort-arrows{
+  display:inline-block;
+  margin-left:4px;
+  font-size:9px;
+  color:#d1d5db;
+  vertical-align:middle;
+  line-height:1;
+}
+tbody tr{
+  border-bottom:1px solid #f3f4f6;
+  transition:background .12s;
+  cursor:pointer;
+}
+tbody tr:last-child{
+  border-bottom:none;
+}
+tbody tr:hover{
+  background:#f9fafb;
+}
+tbody td{
+  padding:14px 16px;
+  vertical-align:middle;
+  color:#111827;
+  font-size:13.5px;
+}
+/* Blurred paywall rows */
+tbody tr.blur-row td{filter:blur(4px);user-select:none;pointer-events:none;}
+tbody tr.blur-row:hover{background:transparent;cursor:default;}
+/* Date */
+.td-date{
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  color:#6b7280;
+  white-space:nowrap;
+}
+/* Transaction type */
+.td-txn{
+  font-size:12px;
+  color:#6b7280;
+  white-space:nowrap;
+}
+/* Country */
+.td-country{
+  white-space:nowrap;
+  font-size:13px;
+  color:#374151;
+}
+.td-country span{
+  display:inline;
+  background:none;
+  border:none;
+  padding:0;
+  color:#374151;
+  font-size:13px;
+  font-weight:400;
+}
+/* Sector */
+.td-sector span{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:4px;
+  font-size:11.5px;
+  font-weight:500;
+  color:#6b7280;
+  background:#f3f4f6;
+  border:none;
+  white-space:nowrap;
+  text-decoration:none;
+}
+/* Target company — semibold, dark */
+.td-target{
+  font-weight:600;
+  color:#111827;
+  white-space:nowrap;
+}
+/* Acquirer */
+.td-acq{
+  color:#6b7280;
+  font-size:12.5px;
+  max-width:200px;
+}
+/* Summary */
+.td-summary{
+  font-size:12.5px;
+  color:#6b7280;
+  max-width:220px;
+}
+/* Numeric values */
+.td-val{
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  font-weight:500;
+  text-align:right;
+  white-space:nowrap;
+  color:#111827;
+}
+.td-val.known{
+  color:#111827;
+}
+.td-val.undisclosed{
+  color:#9ca3af;
+  font-style:italic;
+  font-size:12px;
+  font-weight:400;
+}
+.td-stake{
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  font-weight:500;
+  text-align:center;
+  color:#111827;
+  white-space:nowrap;
+}
+/* Table footer */
+.tbl-footer{display:flex;align-items:center;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:10px;}
+.tbl-footer .cnt{font-size:12px;color:var(--muted);}
+.tbl-footer a{font-size:12px;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border);}
+
 /* Filter row */
 .filter-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
 .filter-group{display:flex;flex-direction:column;gap:5px;}
@@ -36,10 +186,6 @@
 .paywall-features .pf{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.6);}
 .paywall-features .pf::before{content:'✓';color:var(--gold);font-weight:700;font-size:13px;}
 .deal-count-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid var(--border);border-radius:2px;padding:6px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--gold);margin-bottom:18px;}
-
-/* Table blur effect on last 3 rows */
-tbody tr.blur-row td{filter:blur(4px);user-select:none;pointer-events:none;}
-tbody tr.blur-row:hover{background:transparent;cursor:default;}
 
 /* Last updated */
 .last-updated{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;}
@@ -256,14 +402,18 @@ tbody tr.blur-row:hover{background:transparent;cursor:default;}
       <table>
         <thead>
           <tr>
-            <th></th><th>Announced Date</th><th>Transaction Type</th><th>Country</th><th>Sector</th>
-            <th>Target</th><th>Acquirer / Investors</th>
+            <th>Announced Date <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th>Transaction Type <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th>Country <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th>Sector <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th>Target <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th>Acquirer / Investors</th>
             <th>Investment Summary</th>
-            <th style="text-align:right">Deal Value ($M)</th>
-            <th style="text-align:center">Stake</th>
-            <th style="text-align:right">Sales ($M)</th>
-            <th style="text-align:right">EV/Sales</th>
-            <th style="text-align:right">EV/EBITDA</th>
+            <th style="text-align:right">Deal Value ($M) <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th style="text-align:center">Stake <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th style="text-align:right">Sales ($M) <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th style="text-align:right">EV/Sales <span class="sort-arrows">&#9650;&#9660;</span></th>
+            <th style="text-align:right">EV/EBITDA <span class="sort-arrows">&#9650;&#9660;</span></th>
           </tr>
         </thead>
         <tbody id="dealsBody"></tbody>
@@ -565,7 +715,6 @@ function renderTable() {
     var isBlur = showBlur && i >= FILTERED.length - 3;
     var blurClass = isBlur ? ' class="blur-row"' : '';
     return '<tr' + blurClass + (isBlur ? '' : ' onclick="openModal('+realIdx+')"') + '>'
-      + '<td class="td-logo"><div class="logo-fallback"><div class="ar-init"><span class="ar-a">A</span><span class="ar-r">R</span></div><div class="ar-name">Achievers Regal</div></div></td>'
       + '<td class="td-date">'   + d.date     + '</td>'
       + '<td class="td-txn">'    + d.txnType  + '</td>'
       + '<td class="td-country"><span>' + d.country + '</span></td>'
