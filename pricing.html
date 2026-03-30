@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing | DealFlow Africa</title>
-<meta name="description" content="Subscribe to DealFlow Africa for full access to 100+ M&A, PE, and VC transactions across Africa with valuation multiples and analyst support.">
+<meta name="description" content="Subscribe to DealFlow Africa for full access to 100+ M&A, PE, and VC transactions across Africa with valuation multiples and analyst support. From $20/month.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -635,6 +635,51 @@ footer {
   .checkout-box { padding: 32px 24px; margin: 16px; max-width: calc(100% - 32px); }
 }
 </style>
+<!-- SEO -->
+<link rel="canonical" href="https://dealsbase.africa/pricing.html">
+<meta property="og:title" content="Pricing | DealFlow Africa">
+<meta property="og:description" content="Subscribe to DealFlow Africa for full access to 100+ M&A, PE, and VC transactions across Africa with valuation multiples and analyst support. From $20/month.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dealsbase.africa/pricing.html">
+<meta property="og:image" content="https://dealsbase.africa/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="DealFlow Africa">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing | DealFlow Africa">
+<meta name="twitter:description" content="Subscribe to DealFlow Africa for full access to 100+ M&A, PE, and VC transactions across Africa with valuation multiples and analyst support. From $20/month.">
+<meta name="twitter:image" content="https://dealsbase.africa/og-image.png">
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Achievers Regal",
+    "alternateName": "DealFlow Africa",
+    "url": "https://dealsbase.africa",
+    "logo": "https://dealsbase.africa/og-image.png",
+    "description": "Finance and investment services firm specialising in M&A advisory, valuation, and deal intelligence across Africa.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "email": "grace@achieversregal.com",
+        "contactType": "sales",
+        "name": "Grace Kagure"
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "beryl@achieversregal.com",
+        "contactType": "sales",
+        "name": "Beryl Nyajuoga"
+      }
+    ],
+    "sameAs": []
+  }</script>
+<!-- /SEO -->
 </head>
 <body>
 
@@ -831,16 +876,16 @@ footer {
     </div>
     <div class="co-err" id="coErr">Please enter your name and a valid email address.</div>
     <button class="co-submit" id="coSubmit" onclick="proceedToPayment()">Proceed to Payment &rarr;</button>
-    <p class="co-legal">Secured by Flutterwave &middot; Card, Mobile Money, Bank Transfer accepted</p>
+    <p class="co-legal">Secured by Paystack &middot; Card, M-Pesa, Bank Transfer accepted</p>
   </div>
 </div>
 
-<!-- Flutterwave Inline JS SDK -->
-<script src="https://checkout.flutterwave.com/v3.js"></script>
+<!-- Paystack Inline JS SDK -->
+<script src="https://js.paystack.co/v2/inline.js"></script>
 
 <script>
-// REPLACE WITH YOUR FLUTTERWAVE PUBLIC KEY
-var FLW_PUBLIC_KEY = 'FLWPUBK-XXXXXXXXXXXXXXXX-X';
+// REPLACE WITH YOUR PAYSTACK PUBLIC KEY
+var PAYSTACK_PUBLIC_KEY = 'pk_live_XXXXXXXXXXXXXXXX';
 
 var activePlan = 'monthly'; // 'monthly' or 'annual'
 
@@ -892,31 +937,29 @@ function proceedToPayment() {
 
   closeCheckout();
 
-  FlutterwaveCheckout({
-    public_key:      FLW_PUBLIC_KEY,
-    tx_ref:          txRef,
-    amount:          amount,
-    currency:        'USD',
-    payment_options: 'card,mobilemoney,ussd,banktransfer',
-    customer: {
-      email: email,
-      name:  name
+  var handler = PaystackPop.setup({
+    key:       PAYSTACK_PUBLIC_KEY,
+    email:     email,
+    amount:    amount * 100, // Paystack expects amount in cents/kobo
+    currency:  'USD',
+    ref:       txRef,
+    metadata: {
+      custom_fields: [
+        { display_name: 'Full Name', variable_name: 'full_name', value: name },
+        { display_name: 'Plan', variable_name: 'plan', value: description }
+      ]
     },
-    customizations: {
-      title:       'DealFlow Africa',
-      description: description,
-      logo:        ''
-    },
-    callback: function(data) {
-      // Payment completed — redirect to success page with transaction reference
-      window.location.href = 'success.html?tx_ref=' + encodeURIComponent(txRef) + '&plan=' + encodeURIComponent(activePlan);
-    },
-    onclose: function() {
-      // User closed the payment modal — do nothing, just re-enable button
+    onClose: function() {
+      // User closed the payment modal — re-enable button
       btn.disabled = false;
-      btn.textContent = 'Proceed to Payment →';
+      btn.textContent = 'Proceed to Payment \u2192';
+    },
+    callback: function(response) {
+      // Payment completed — redirect to success page with transaction reference
+      window.location.href = 'success.html?tx_ref=' + encodeURIComponent(response.reference) + '&plan=' + encodeURIComponent(activePlan);
     }
   });
+  handler.openIframe();
 }
 
 // Close modal on Escape key
