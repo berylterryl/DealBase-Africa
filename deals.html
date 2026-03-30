@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Africa M&A & PE Deals Database | DealFlow Africa</title>
-<meta name="description" content="Browse the latest M&A, private equity and venture capital transactions across Africa. Updated daily.">
+<meta name="description" content="Browse the latest M&A, private equity and venture capital transactions across Africa. 100+ deals with valuation multiples, deal values, and investment summaries.">
 <link rel="stylesheet" href="style.css">
 <style>
 /* Loading */
@@ -45,6 +45,22 @@ tbody tr.blur-row:hover{background:transparent;cursor:default;}
 .last-updated{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;}
 .results-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
 
+/* Email capture banner */
+.email-capture{background:linear-gradient(135deg,rgba(201,168,76,.06) 0%,rgba(8,51,53,.4) 100%);border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:28px 32px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;}
+.email-capture::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent);}
+.email-capture-text h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.email-capture-text p{font-size:14px;color:var(--muted);line-height:1.6;}
+.email-capture-form{display:flex;gap:8px;flex-shrink:0;}
+.email-capture-form input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;padding:10px 16px;border-radius:2px;outline:none;width:260px;transition:border-color .2s;}
+.email-capture-form input:focus{border-color:var(--gold);}
+.email-capture-form input::placeholder{color:rgba(255,255,255,.25);}
+.email-capture-form button{background:var(--gold);color:var(--green);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border:none;border-radius:2px;cursor:pointer;white-space:nowrap;transition:background .2s;letter-spacing:.03em;}
+.email-capture-form button:hover{background:var(--gold-light);}
+.email-capture-success{display:none;font-family:'DM Mono',monospace;font-size:14px;color:var(--gold);letter-spacing:.04em;}
+.email-capture-dismiss{position:absolute;top:10px;right:14px;background:none;border:none;color:rgba(255,255,255,.25);font-size:16px;cursor:pointer;padding:4px;transition:color .2s;}
+.email-capture-dismiss:hover{color:var(--white);}
+@media(max-width:720px){.email-capture{flex-direction:column;align-items:flex-start;padding:22px 20px;}.email-capture-form{width:100%;flex-direction:column;}.email-capture-form input{width:100%;}}
+
 /* Subscriber unlock button */
 .unlock-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px;}
 .unlock-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;padding:8px 16px;border-radius:2px;cursor:pointer;transition:all .2s;}
@@ -64,6 +80,75 @@ tbody tr.blur-row:hover{background:transparent;cursor:default;}
 .sub-box .sub-link:hover{text-decoration:underline;}
 .sub-cancel{background:none;border:none;color:rgba(255,255,255,.35);font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:12px;}
 </style>
+<!-- SEO -->
+<link rel="canonical" href="https://dealsbase.africa/deals.html">
+<meta property="og:title" content="Africa M&A & PE Deals Database | DealFlow Africa">
+<meta property="og:description" content="Browse the latest M&A, private equity and venture capital transactions across Africa. 100+ deals with valuation multiples, deal values, and investment summaries.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dealsbase.africa/deals.html">
+<meta property="og:image" content="https://dealsbase.africa/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="DealFlow Africa">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Africa M&A & PE Deals Database | DealFlow Africa">
+<meta name="twitter:description" content="Browse the latest M&A, private equity and venture capital transactions across Africa. 100+ deals with valuation multiples, deal values, and investment summaries.">
+<meta name="twitter:image" content="https://dealsbase.africa/og-image.png">
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Achievers Regal",
+    "alternateName": "DealFlow Africa",
+    "url": "https://dealsbase.africa",
+    "logo": "https://dealsbase.africa/og-image.png",
+    "description": "Finance and investment services firm specialising in M&A advisory, valuation, and deal intelligence across Africa.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "email": "grace@achieversregal.com",
+        "contactType": "sales",
+        "name": "Grace Kagure"
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "beryl@achieversregal.com",
+        "contactType": "sales",
+        "name": "Beryl Nyajuoga"
+      }
+    ],
+    "sameAs": []
+  }</script>
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "DealFlow Africa Transaction Database",
+    "description": "A curated database of 100+ M&A, private equity, and venture capital transactions across Africa, including deal values, valuation multiples (EV/Sales, EV/EBITDA), stake sizes, and investment summaries.",
+    "url": "https://dealsbase.africa/deals.html",
+    "keywords": ["Africa M&A", "African private equity", "venture capital Africa", "deal database", "valuation multiples", "EV/Sales", "EV/EBITDA", "African transactions"],
+    "creator": {
+      "@type": "Organization",
+      "name": "Achievers Regal"
+    },
+    "license": "https://dealsbase.africa/pricing.html",
+    "temporalCoverage": "2023/2026",
+    "spatialCoverage": {
+      "@type": "Place",
+      "name": "Africa"
+    },
+    "variableMeasured": [
+      "Deal Value (USD millions)",
+      "EV/Sales Multiple",
+      "EV/EBITDA Multiple",
+      "Stake Percentage"
+    ]
+  }</script>
+<!-- /SEO -->
 </head>
 <body>
 
@@ -96,6 +181,20 @@ tbody tr.blur-row:hover{background:transparent;cursor:default;}
 </div>
 
 <section>
+
+  <!-- EMAIL CAPTURE BANNER -->
+  <div class="email-capture" id="emailCapture">
+    <button class="email-capture-dismiss" onclick="dismissEmailCapture()" title="Dismiss">&#10005;</button>
+    <div class="email-capture-text">
+      <h3>Get the Africa Deal Pulse</h3>
+      <p>Free weekly M&amp;A and PE deal insights delivered to your inbox.</p>
+    </div>
+    <form class="email-capture-form" id="emailForm" onsubmit="return handleEmailSubmit(event)">
+      <input type="email" id="emailInput" placeholder="your@email.com" required autocomplete="email">
+      <button type="submit" id="emailSubmitBtn">Subscribe Free</button>
+    </form>
+    <div class="email-capture-success" id="emailSuccess">&#10003; You're in. Watch your inbox.</div>
+  </div>
 
   <!-- UNLOCK BAR -->
   <div class="unlock-bar" id="unlockBar" style="display:none;">
@@ -554,6 +653,47 @@ function doSubLogout() {
 }
 
 loadDeals();
+
+// ─── EMAIL CAPTURE ───
+(function() {
+  // Hide if already subscribed or dismissed
+  if (localStorage.getItem('dfa_email_subscribed') || localStorage.getItem('dfa_email_dismissed')) {
+    var ec = document.getElementById('emailCapture');
+    if (ec) ec.style.display = 'none';
+  }
+})();
+
+function handleEmailSubmit(e) {
+  e.preventDefault();
+  var email = document.getElementById('emailInput').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+
+  // Store email locally (collect for export)
+  var emails = JSON.parse(localStorage.getItem('dfa_email_list') || '[]');
+  if (emails.indexOf(email) === -1) emails.push(email);
+  localStorage.setItem('dfa_email_list', JSON.stringify(emails));
+  localStorage.setItem('dfa_email_subscribed', 'true');
+
+  // Show success state
+  document.getElementById('emailForm').style.display = 'none';
+  document.getElementById('emailSuccess').style.display = 'block';
+
+  // Auto-hide after 4 seconds
+  setTimeout(function() {
+    var ec = document.getElementById('emailCapture');
+    if (ec) { ec.style.opacity = '0'; ec.style.transition = 'opacity .5s'; }
+    setTimeout(function() { if (ec) ec.style.display = 'none'; }, 500);
+  }, 4000);
+
+  return false;
+}
+
+function dismissEmailCapture() {
+  localStorage.setItem('dfa_email_dismissed', 'true');
+  var ec = document.getElementById('emailCapture');
+  if (ec) { ec.style.opacity = '0'; ec.style.transition = 'opacity .3s'; }
+  setTimeout(function() { if (ec) ec.style.display = 'none'; }, 300);
+}
 </script>
 </body>
 </html>
