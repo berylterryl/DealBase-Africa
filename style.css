@@ -546,7 +546,7 @@ footer{background:rgba(15,23,42,.04);border-top:1px solid var(--border);padding:
 .page-deals .clear-btn:hover{border-color:var(--gold);color:var(--white);}
 .page-deals .paywall-banner{position:relative;margin-top:-2px;background:linear-gradient(180deg,rgba(8,51,53,0) 0%,rgba(8,51,53,.97) 38%,rgba(8,51,53,1) 100%);padding:60px 5% 40px;text-align:center;border:1px solid var(--border);border-top:none;border-radius:0 0 4px 4px;}
 .page-deals .paywall-banner h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:10px;}
-.page-deals .paywall-banner p{font-size:13.5px;color:var(--muted);max-width:480px;margin:0 auto 24px;line-height:1.75;}
+.page-deals .paywall-banner p{font-size:13.5px;color:#fff;max-width:480px;margin:0 auto 24px;line-height:1.75;}
 .page-deals .paywall-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 .page-deals .pw-btn-primary{background:var(--gold);color:var(--green);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:12px 28px;border-radius:2px;text-decoration:none;letter-spacing:.04em;transition:background .2s;}
 .page-deals .pw-btn-primary:hover{background:var(--gold);}

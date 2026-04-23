@@ -195,10 +195,6 @@
 
     <!-- PAYWALL BANNER -->
     <div class="paywall-banner" id="paywallBanner">
-      <div class="deal-count-badge">
-        <span id="totalDealsCount">100+</span> total transactions in our full database
-      </div>
-      <h3>You&rsquo;re seeing 15 of <span id="paywallTotal">100+</span> deals</h3>
       <p>Get full access to our complete transaction database, advanced filters, valuation data, deal summaries, and weekly deal alerts.</p>
       <div class="paywall-features">
         <div class="pf">Full transaction database</div>
@@ -362,11 +358,6 @@ function loadDeals() {
 
       // Populate filter dropdowns from preview data
       populateFilters();
-
-      // Update paywall totals
-      var total = ALL_DEALS.length;
-      document.getElementById('totalDealsCount').textContent = total + '+';
-      document.getElementById('paywallTotal').textContent = total;
 
       // Update ticker with disclosed deals
       var disclosed = ALL_DEALS.filter(function(d){ return d.valueNum; }).slice(0, 8);
