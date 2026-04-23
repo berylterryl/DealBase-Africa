@@ -532,7 +532,7 @@ footer{background:rgba(15,23,42,.04);border-top:1px solid var(--border);padding:
 .page-deals .td-val.known{color:#111827;}
 .page-deals .td-val.undisclosed{color:#9ca3af;font-style:italic;font-size:12px;font-weight:400;}
 .page-deals .td-stake{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;text-align:center;color:#111827;white-space:nowrap;}
-.page-deals thead th,.page-deals tbody td,.page-deals .td-date,.page-deals .td-txn,.page-deals .td-country,.page-deals .td-country span,.page-deals .td-sector span,.page-deals .td-target,.page-deals .td-acq,.page-deals .td-summary,.page-deals .td-val,.page-deals .td-val.known,.page-deals .td-val.undisclosed,.page-deals .td-stake{color:#000;}
+.page-deals tbody td,.page-deals .td-date,.page-deals .td-txn,.page-deals .td-country,.page-deals .td-country span,.page-deals .td-sector span,.page-deals .td-target,.page-deals .td-acq,.page-deals .td-summary,.page-deals .td-val,.page-deals .td-val.known,.page-deals .td-val.undisclosed,.page-deals .td-stake{color:#000;}
 .page-deals .tbl-footer{display:flex;align-items:center;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:10px;}
 .page-deals .tbl-footer .cnt{font-size:12px;color:var(--muted);}
 .page-deals .tbl-footer a{font-size:12px;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border);}
