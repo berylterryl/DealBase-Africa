@@ -506,7 +506,10 @@ footer{background:rgba(15,23,42,.04);border-top:1px solid var(--border);padding:
 .page-deals .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:dealsSpin .8s linear infinite;}
 @keyframes dealsSpin{to{transform:rotate(360deg)}}
 .page-deals .loading-state p{font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.08em;}
-.page-deals .tbl-wrap{overflow-x:auto;border-radius:10px;border:1px solid #e5e7eb;box-shadow:0 1px 4px rgba(0,0,0,.06),0 4px 24px rgba(0,0,0,.08);background:#fff;}
+.page-deals .eyebrow{color:var(--green);}
+.page-deals .eyebrow::before{background:var(--green);}
+.page-deals .page-header h1 em{color:var(--gold);font-style:normal;}
+.page-deals .tbl-wrap{overflow-x:auto;border-radius:0;border:1px solid #e5e7eb;box-shadow:none;background:transparent;}
 .page-deals table{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;font-family:'DM Sans',sans-serif;}
 .page-deals thead tr{border-bottom:1px solid #e5e7eb;}
 .page-deals thead th{padding:11px 16px;text-align:left;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#9ca3af;background:#fff;white-space:nowrap;border-bottom:1px solid #e5e7eb;user-select:none;}
