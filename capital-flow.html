@@ -7,7 +7,7 @@
 <meta name="description" content="Where capital is moving across Africa — M&A, PE and VC deal flow analytics by country, sector and transaction type. Charts, KPIs, and valuation benchmarks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <!-- SEO -->
 <link rel="canonical" href="https://dealsbase.africa/capital-flow.html">
@@ -293,7 +293,7 @@ var CAT_COLORS = [
 /* ═══════════════════════════════════════════════════════
    CHART.JS GLOBAL DEFAULTS  (all 14px minimum)
 ═══════════════════════════════════════════════════════ */
-Chart.defaults.font.family = "'DM Sans', sans-serif";
+Chart.defaults.font.family = "'Roboto', sans-serif";
 Chart.defaults.font.size = 14;
 Chart.defaults.color = 'rgba(255,255,255,0.55)';
 Chart.defaults.plugins.legend.labels.boxWidth = 10;
@@ -306,8 +306,8 @@ Chart.defaults.plugins.tooltip.padding = 12;
 Chart.defaults.plugins.tooltip.cornerRadius = 3;
 Chart.defaults.plugins.tooltip.borderColor = 'rgba(204,153,0,0.25)';
 Chart.defaults.plugins.tooltip.borderWidth = 1;
-Chart.defaults.plugins.tooltip.titleFont = { family: "'DM Mono', monospace", size: 14 };
-Chart.defaults.plugins.tooltip.bodyFont = { family: "'DM Sans', sans-serif", size: 14 };
+Chart.defaults.plugins.tooltip.titleFont = { family: "'Roboto', sans-serif", size: 14 };
+Chart.defaults.plugins.tooltip.bodyFont = { family: "'Roboto', sans-serif", size: 14 };
 
 /* ═══════════════════════════════════════════════════════
    HELPERS
@@ -571,7 +571,7 @@ function buildCharts() {
   buildChartTimeline();
 }
 
-var TICK_FONT = { family: "'DM Mono', monospace", size: 14 };
+var TICK_FONT = { family: "'Roboto', sans-serif", size: 14 };
 var GRID_COLOR = 'rgba(255,255,255,0.05)';
 
 /* Chart 1 – Deals by Country (horizontal bar) */
@@ -690,10 +690,10 @@ function buildChartMarketDoughnut() {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = '#cc9900';
-        ctx.font = "600 26px 'DM Mono', monospace";
+        ctx.font = "600 26px 'Roboto', sans-serif";
         ctx.fillText(total, cx, cy - 10);
         ctx.fillStyle = 'rgba(255,255,255,0.45)';
-        ctx.font = "14px 'DM Sans', sans-serif";
+        ctx.font = "14px 'Roboto', sans-serif";
         ctx.fillText('deals', cx, cy + 13);
         ctx.restore();
       }
