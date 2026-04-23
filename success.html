@@ -12,10 +12,8 @@
 <style>
 /* ─── CSS VARIABLES ─── */
 :root {
-  --green: #f8fafc;
-  --gold: #C9A84C;
-  --gold-light: #d4b65e;
-  --gold-dim: rgba(201,168,76,.08);
+  --green: #003A41;
+  --gold: #cc9900;
   --white: #0f172a;
   --muted: rgba(15,23,42,.65);
   --border: rgba(15,23,42,.14);
@@ -107,7 +105,7 @@ nav {
   transition: color .2s, background .2s;
 }
 .nav-links a:hover { color: var(--white); background: rgba(15,23,42,.05); }
-.nav-links .active-page { color: var(--gold) !important; background: var(--gold-dim) !important; }
+.nav-links .active-page { color: var(--gold) !important; background: var(--gold) !important; }
 .btn-cta {
   background: var(--gold) !important;
   color: var(--green) !important;
@@ -115,7 +113,7 @@ nav {
   padding: 7px 16px !important;
   border-radius: 2px !important;
 }
-.btn-cta:hover { background: var(--gold-light) !important; }
+.btn-cta:hover { background: var(--gold) !important; }
 
 /* ─── MAIN CONTENT ─── */
 main {
@@ -152,7 +150,7 @@ main::before {
   width: 72px;
   height: 72px;
   margin: 0 auto 28px;
-  background: var(--gold-dim);
+  background: var(--gold);
   border: 2px solid rgba(201,168,76,.35);
   border-radius: 50%;
   display: flex;
@@ -226,7 +224,7 @@ main::before {
   color: var(--gold);
   letter-spacing: .08em;
   word-break: break-all;
-  background: var(--gold-dim);
+  background: var(--gold);
   border: 1px solid rgba(201,168,76,.15);
   border-radius: 2px;
   padding: 10px 14px;
@@ -266,7 +264,7 @@ main::before {
   transition: all .2s;
 }
 .pw-copy-btn:hover {
-  background: var(--gold-dim);
+  background: var(--gold);
   border-color: var(--gold);
 }
 .pw-copy-ok {
@@ -293,7 +291,7 @@ main::before {
   text-transform: uppercase;
 }
 .deals-btn:hover {
-  background: var(--gold-light);
+  background: var(--gold);
   transform: translateY(-2px);
 }
 

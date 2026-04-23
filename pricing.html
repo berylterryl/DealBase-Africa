@@ -12,10 +12,8 @@
 <style>
 /* ─── CSS VARIABLES ─── */
 :root {
-  --green: #f8fafc;
-  --gold: #C9A84C;
-  --gold-light: #d4b65e;
-  --gold-dim: rgba(201,168,76,.08);
+  --green: #003A41;
+  --gold: #cc9900;
   --white: #0f172a;
   --muted: rgba(15,23,42,.65);
   --border: rgba(15,23,42,.14);
@@ -105,7 +103,7 @@ nav {
   transition: color .2s, background .2s;
 }
 .nav-links a:hover { color: var(--white); background: rgba(15,23,42,.05); }
-.nav-links .active-page { color: var(--gold) !important; background: var(--gold-dim) !important; }
+.nav-links .active-page { color: var(--gold) !important; background: var(--gold) !important; }
 .btn-cta {
   background: var(--gold) !important;
   color: var(--green) !important;
@@ -113,9 +111,9 @@ nav {
   padding: 7px 16px !important;
   border-radius: 2px !important;
 }
-.btn-cta:hover { background: var(--gold-light) !important; }
+.btn-cta:hover { background: var(--gold) !important; }
 .btn-cta.active-page {
-  background: var(--gold-light) !important;
+  background: var(--gold) !important;
   color: var(--green) !important;
   outline: 2px solid var(--gold);
   outline-offset: 2px;
@@ -278,7 +276,7 @@ nav {
   font-size: 11px;
   letter-spacing: .1em;
   color: var(--gold);
-  background: var(--gold-dim);
+  background: var(--gold);
   border: 1px solid rgba(201,168,76,.2);
   padding: 3px 9px;
   border-radius: 2px;
@@ -338,7 +336,7 @@ nav {
   text-transform: uppercase;
 }
 .card-btn:hover {
-  background: var(--gold-light);
+  background: var(--gold);
   transform: translateY(-1px);
 }
 .card-btn:active { transform: translateY(0); }
@@ -384,7 +382,7 @@ nav {
 .included-icon {
   width: 32px;
   height: 32px;
-  background: var(--gold-dim);
+  background: var(--gold);
   border: 1px solid rgba(201,168,76,.15);
   border-radius: 2px;
   display: flex;
@@ -436,7 +434,7 @@ nav {
   text-decoration: none;
   transition: color .2s;
 }
-.contact-row a:hover { color: var(--gold-light); }
+.contact-row a:hover { color: var(--gold); }
 .contact-row .cicon {
   width: 18px;
   height: 18px;
@@ -516,7 +514,7 @@ footer {
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--gold);
-  background: var(--gold-dim);
+  background: var(--gold);
   border: 1px solid rgba(201,168,76,.2);
   padding: 3px 9px;
   border-radius: 2px;
@@ -585,7 +583,7 @@ footer {
   transition: background .2s;
   margin-top: 6px;
 }
-.co-submit:hover { background: var(--gold-light); }
+.co-submit:hover { background: var(--gold); }
 .co-submit:disabled { opacity: .6; cursor: not-allowed; }
 .co-legal {
   margin-top: 14px;
