@@ -511,8 +511,8 @@ footer{background:rgba(15,23,42,.04);border-top:1px solid var(--border);padding:
 .page-deals .page-header h1 em{color:var(--gold);font-style:normal;}
 .page-deals .tbl-wrap{overflow-x:auto;border-radius:0;border:.5px solid #eceff3;box-shadow:none;background:transparent;}
 .page-deals table{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;font-family:'DM Sans',sans-serif;}
-.page-deals thead tr{border-bottom:1px solid #e5e7eb;}
-.page-deals thead th{padding:11px 16px;text-align:left;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#9ca3af;background:#fff;white-space:nowrap;border-bottom:1px solid #e5e7eb;user-select:none;}
+.page-deals thead tr{border-bottom:1px solid var(--green);}
+.page-deals thead th{padding:11px 16px;text-align:left;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);background:var(--green);white-space:nowrap;border-bottom:1px solid var(--green);user-select:none;}
 .page-deals thead th .sort-arrows{display:inline-block;margin-left:4px;font-size:9px;color:#d1d5db;vertical-align:middle;line-height:1;}
 .page-deals tbody tr{border-bottom:1px solid #f3f4f6;transition:background .12s;cursor:pointer;}
 .page-deals tbody tr:last-child{border-bottom:none;}
