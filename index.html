@@ -107,7 +107,7 @@
 <!-- HERO -->
 <div class="hero" style="padding:88px 5% 68px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);">
   <div class="eyebrow">Africa Private Capital Intelligence</div>
-  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5.2vw,68px);font-weight:700;line-height:1.08;letter-spacing:-.01em;max-width:760px;margin-bottom:22px;">What <em style="font-style:italic;color:var(--gold)">capital</em> is<br>moving across Africa.</h1>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5.2vw,68px);font-weight:700;line-height:1.08;letter-spacing:-.01em;max-width:760px;margin-bottom:22px;">What <em style="font-style:italic;color:#083335">capital</em> is<br>moving across Africa.</h1>
   <p style="font-size:15px;color:var(--muted);max-width:540px;line-height:1.78;">Tracking private equity, venture capital, and M&amp;A activity across the continent &mdash; providing deal intelligence, valuation benchmarks, and strategic insights for investors, operators, and advisors.</p>
   <div class="cta-row">
     <a href="deals.html" class="cta-card"><div class="ico">&#128203;</div><div><div class="lbl">View Transaction Deals</div><div class="sub">26 deals tracked &middot; Updated Oct 2025</div></div></a>
@@ -122,27 +122,6 @@
   <div class="stat-cell"><div class="sl">Biggest Acquisition Stake</div><div class="sv">75&ndash;80%</div><div class="sd">Telecom Egypt &mdash; Helios Investment Partners</div></div>
   <div class="stat-cell"><div class="sl">Country with Most Deals</div><div class="sv">South Africa</div><div class="sd">11 transactions tracked &mdash; 42% of dataset</div></div>
 </div>
-
-<!-- RECENT DEALS -->
-<section style="border-top:1px solid var(--border);">
-  <div class="sec-head">
-    <div class="sec-label">Latest Transactions</div>
-    <h2 class="sec-title">Recent Deals</h2>
-    <p class="sec-desc">A snapshot of the most recent M&amp;A, PE, and VC activity. <a href="deals.html" style="color:var(--gold);text-decoration:none;">View all 26 deals &rarr;</a></p>
-  </div>
-  <div id="recentDeals"></div>
-  <div style="margin-top:22px;"><a href="deals.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--border);padding:10px 20px;border-radius:2px;">View Full Deal Database &rarr;</a></div>
-</section>
-
-<!-- INSIGHTS PREVIEW -->
-<section style="border-top:1px solid var(--border);background:linear-gradient(180deg,rgba(13,74,77,.2) 0%,transparent 100%);">
-  <div class="sec-head">
-    <div class="sec-label">News &amp; Insights</div>
-    <h2 class="sec-title">Latest Market Commentary</h2>
-    <p class="sec-desc">Deal analysis and macro themes shaping African private capital. <a href="insights.html" style="color:var(--gold);text-decoration:none;">View all insights &rarr;</a></p>
-  </div>
-  <div class="ins-grid" id="insightsPreview"></div>
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -241,31 +220,6 @@ function openModal(i){
   document.getElementById('m-sum').textContent=d.summary;
   document.getElementById('dealModal').classList.add('open');
 }
-// Recent deals table (5 rows)
-var rb=document.getElementById('recentDeals');
-var h='<div class="tbl-wrap"><table><thead><tr><th></th><th>Date</th><th>Target</th><th>Acquirer</th><th>Country</th><th>Sector</th><th style="text-align:right">Value</th><th style="text-align:center">Stake</th></tr></thead><tbody>';
-DEALS.slice(0,20).forEach(function(d,i){
-  h+='<tr onclick="openModal('+i+')">'
-    +'<td class="td-logo">'+logoHtml(d)+'</td>'
-    +'<td class="td-date">'+d.date+'</td>'
-    +'<td class="td-target">'+d.target+'</td>'
-    +'<td class="td-acq">'+d.acquirer+'</td>'
-    +'<td class="td-country"><span>'+d.country+'</span></td>'
-    +'<td class="td-sector"><span>'+d.sector+'</span></td>'
-    +'<td class="td-val '+(d.valueNum?'known':'undisclosed')+'">'+d.value+'</td>'
-    +'<td class="td-stake">'+d.stake+'</td></tr>';
-});
-h+='</tbody></table></div>';
-rb.innerHTML=h;
-// Insights preview (3 cards)
-var ig=document.getElementById('insightsPreview');
-ig.innerHTML=INSIGHTS.slice(0,6).map(function(ins){
-  return'<a href="insights.html" class="ins-card'+(ins.type==='macro'?' macro':'')+'">'
-    +'<div class="ins-tag">'+ins.tag+'</div>'
-    +'<div class="ins-title">'+ins.title+'</div>'
-    +'<div class="ins-blurb">'+ins.blurb+'</div>'
-    +'<div class="ins-link">'+(ins.type==='macro'?'Read Analysis':'Read Insight')+'</div></a>';
-}).join('');
 function switchTab(id,btn){
   document.querySelectorAll('.admin-section').forEach(function(s){s.classList.remove('active');});
   document.querySelectorAll('.atab').forEach(function(t){t.classList.remove('active');});
