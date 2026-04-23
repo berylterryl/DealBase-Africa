@@ -256,8 +256,8 @@ footer{background:rgba(15,23,42,.04);border-top:1px solid var(--border);padding:
 
 /* CTA CARDS (hero) */
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;}
-.cta-card{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--border);padding:16px 24px;border-radius:3px;text-decoration:none;color:var(--white);transition:all .25s;}
-.cta-card:hover{background:rgba(204,153,0,.09);border-color:var(--gold);transform:translateY(-2px);}
+.cta-card{display:flex;align-items:center;gap:13px;background:transparent;border:none;padding:16px 24px;border-radius:3px;text-decoration:none;color:var(--white);transition:all .25s;}
+.cta-card:hover{background:transparent;border-color:transparent;transform:translateY(-2px);}
 .cta-card .ico{width:34px;height:34px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green);font-size:15px;}
 .cta-card .lbl{font-size:13px;font-weight:600;}
 .cta-card .sub{font-size:10.5px;color:var(--muted);margin-top:2px;}
